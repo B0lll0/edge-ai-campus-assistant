@@ -1,9 +1,4 @@
-cd C:\campus_assistant
-New-Item -ItemType Directory -Force -Path .\assets | Out-Null
-Copy-Item "E:\5th THE LAST DANCE\AI\architecture_banner.png" .\assets\architecture_banner.png -Force
-
-@"
-# Edge AI Avatar Campus Assistant for New Student Onboarding
+﻿# Edge AI Avatar Campus Assistant for New Student Onboarding
 **An Offline LLM-Powered Voice Interactive System**
 
 ![Edge AI Avatar System Architecture](./assets/architecture_banner.png)
@@ -40,7 +35,7 @@ Unlike cloud-based chatbots, all AI inference runs locally on edge hardware (**R
 * **Interface:** Python Flask API & Kiosk Web UI
 
 ### End-to-End Workflow
-``Student Asks (Voice/Text)`` ➔ ``Whisper STT`` ➔ ``ChromaDB RAG Search`` ➔ ``Ollama LLM Generates Grounded Answer`` ➔ ``TTS Voice + Touch Display``
+``Student Asks (Voice/Text)`` âž” ``Whisper STT`` âž” ``ChromaDB RAG Search`` âž” ``Ollama LLM Generates Grounded Answer`` âž” ``TTS Voice + Touch Display``
 
 ---
 
@@ -53,10 +48,10 @@ Unlike cloud-based chatbots, all AI inference runs locally on edge hardware (**R
 ---
 
 ## Repository Structure & Quick Start
-* ``campus_assistant/llm_server.py`` — Local Flask streaming API (``/health``, ``/ask_stream``, ``/chat``)
-* ``campus_assistant/rag_inference.py`` — ChromaDB semantic search + sentence-level Ollama streaming
-* ``campus_assistant/ingest_data.py`` — Recursive PDF/JSON/CSV/TXT chunker and ``nomic-embed-text`` indexer
-* ``campus_assistant/Modelfile.txt`` — Custom ``campus-assistant`` guardrail & bilingual system prompt
+* ``campus_assistant/llm_server.py`` â€” Local Flask streaming API (``/health``, ``/ask_stream``, ``/chat``)
+* ``campus_assistant/rag_inference.py`` â€” ChromaDB semantic search + sentence-level Ollama streaming
+* ``campus_assistant/ingest_data.py`` â€” Recursive PDF/JSON/CSV/TXT chunker and ``nomic-embed-text`` indexer
+* ``campus_assistant/Modelfile.txt`` â€” Custom ``campus-assistant`` guardrail & bilingual system prompt
 
 ### Run Locally
 ````bash
@@ -67,3 +62,4 @@ ollama pull qwen2.5:1.5b-instruct-q4_K_M
 ollama create campus-assistant -f Modelfile.txt
 python ingest_data.py
 python llm_server.py
+
