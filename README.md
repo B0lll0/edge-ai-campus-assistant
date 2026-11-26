@@ -1,4 +1,6 @@
 cd C:\campus_assistant
+New-Item -ItemType Directory -Force -Path .\assets | Out-Null
+Copy-Item "E:\5th THE LAST DANCE\AI\architecture_banner.png" .\assets\architecture_banner.png -Force
 
 @"
 # Edge AI Avatar Campus Assistant for New Student Onboarding
